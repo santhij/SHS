@@ -1,0 +1,72 @@
+﻿@model IEnumerable<HealthSystemsDemo.Models.Feedback>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Results</h2>
+
+
+<h2>Avg. Customer Exp: @ViewBag.Average</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table table-condensed">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Industry.Description)*@
+            Industry
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.UserId)*@
+            User
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.MainFeature)*@
+            Main Feature Liked!!!
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.ServiceRating)*@
+            User Experience
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.AreaOfImprovement)*@
+            Suggestion
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.FurtherFeedback)*@
+            Feedback
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Industry.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MainFeature)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ServiceRating)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AreaOfImprovement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FurtherFeedback)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>*@
+    </tr>
+}
+
+</table>

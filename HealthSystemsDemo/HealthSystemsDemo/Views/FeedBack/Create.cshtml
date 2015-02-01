@@ -1,0 +1,101 @@
+﻿@model HealthSystemsDemo.Models.Feedback
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Simple Health Systems</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Customer Feedback form</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.Id, new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.Id)
+                @Html.ValidationMessageFor(model => model.Id)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.UserId, new { @class = "control-label col-md-4" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.UserId)
+                @Html.ValidationMessageFor(model => model.UserId)
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IndustryId, new { @class = "control-label col-md-5" })
+            <div class="col-md-6">
+                @Html.DropDownList("IndustryId", String.Empty)
+                @Html.ValidationMessageFor(model => model.IndustryId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MainFeature, new { @class = "control-label col-md-5" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.MainFeature)
+                @Html.ValidationMessageFor(model => model.MainFeature)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ServiceRating, new { @class = "control-label col-md-5" })
+            <div class="col-md-6">
+                @Html.RadioButton("rbGrp", "1", true) 1
+                @Html.RadioButton("rbGrp", "2", false) 2
+                @Html.RadioButton("rbGrp", "3", false) 3
+                @Html.RadioButton("rbGrp", "4", false) 4
+                @Html.RadioButton("rbGrp", "5", false) 5
+
+                @*@Html.RadioButton(model => model.ServiceRating, "true") 1
+                @Html.RadioButtonFor(model => model.ServiceRating, "false") 2
+                @Html.RadioButtonFor(model => model.ServiceRating, "false") 3
+                @Html.RadioButtonFor(model => model.ServiceRating, "false") 4
+                @Html.RadioButtonFor(model => model.ServiceRating, "false") 5*@
+
+            
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.AreaOfImprovement, new { @class = "control-label col-md-5" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.AreaOfImprovement)
+                @Html.ValidationMessageFor(model => model.AreaOfImprovement)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FurtherFeedback, new { @class = "control-label col-md-5" })
+            <div class="col-md-6">
+                @Html.EditorFor(model => model.FurtherFeedback)
+                @Html.ValidationMessageFor(model => model.FurtherFeedback)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-5"></div>
+            <div class="col-md-5" >
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+@*<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>*@
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

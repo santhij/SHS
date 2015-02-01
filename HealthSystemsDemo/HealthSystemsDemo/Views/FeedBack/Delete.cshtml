@@ -1,0 +1,72 @@
+﻿@model HealthSystemsDemo.Models.Feedback
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Feedback</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Industry.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Industry.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MainFeature)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MainFeature)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ServiceRating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ServiceRating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AreaOfImprovement)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AreaOfImprovement)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FurtherFeedback)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FurtherFeedback)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
